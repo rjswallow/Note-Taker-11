@@ -19,6 +19,5 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.listen(PORT, () => {
-    console.log('Server is up and running on PORT' + PORT)
+    console.log('Server is up and running on PORT ' + PORT)
 })
-
