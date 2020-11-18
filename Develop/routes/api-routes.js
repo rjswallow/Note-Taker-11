@@ -15,7 +15,7 @@ res.send(data)
 
 
 // POST Route
-router.post('/', function (req, res) {
+app.post('/', function (req, res) {
 
 const data = getNotes();
 const newNote = {
@@ -45,9 +45,18 @@ fs.writeFile(path.join(__dirname, '', 'db.json'), JSON.stringify(data), function
 //     res.send('Got a DELETE request at /user')
 //   })
 
-router.delete('/:id', function (req, res) {
+app.delete('/:id', function (req, res) {
 
     const data = getNotes();
+    const updatedNotes = notes.filter(note => note.id !== req.params.id);
+    
+    fs.writeFile(__dirname, '../db/db.json'), JSON.stringify(updatedNotes), (err) => {
+        if (err) {
+            throw err
+        } else {
+
+        }
+    }
 
 
 })
